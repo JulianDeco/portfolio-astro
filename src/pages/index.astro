@@ -1,48 +1,75 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import SocialPill from '../components/SocialPill.astro'
-import Linkedin from '../../icons/Linkedin.astro';
-import Github from '../../icons/Github.astro'
-import Gmail from '../../icons/Gmail.astro'
-import Timeline from '../components/Timeline.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Linkedin from "../../icons/Linkedin.astro";
+import Github from "../../icons/Github.astro";
+import Gmail from "../../icons/Gmail.astro";
+import Timeline from "../components/Timeline.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Brifcase from "../../icons/Brifcase.astro";
+import Code from "../../icons/Code.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<Layout 
-	title="Portfolio de Julian - Desarrollador y programador Web y Backend. Especializado en APIs"
-	description="Contrata a Julian para crear tus APIs a tu necesidad. Además conocimiento en programación y desarrollo Web."
+<Layout
+  title="Portfolio de Julian - Desarrollador y programador Web y Backend. Especializado en APIs"
+  description="Contrata a Julian para crear tus APIs a tu necesidad. Además conocimiento en programación y desarrollo Web."
 >
-	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-24" id="inicio">
+      <h1
+        class="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Hola, soy Julian <a
+          href="https://www.linkedin.com/in/julian-decoppet-059858237/"
+          target="_blank"
+          rel="nooponer"
+          class="flex justify-center items-center"
+          ><Badge>Disponible para trabajar</Badge></a
+        >
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-balance max-w-[700px] text-black dark:text-white">
+        <span class=""
+          >Estudiando una Tecnicatura en Desarrollo de Software.</span
+        >
+        <span class="opacity-85"> Desarrollador Web y Backend.</span>
+        <span class="text-blue-400 dark:text-sky-200"> Especializado en APIs.</span>
+        <span class="opacity-85"> De Rosario, Argentina.</span>
+      </h2>
 
-		
-		<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-10">
-			Hey, I'm Julian <a href="https://www.linkedin.com/in/julian-decoppet-059858237/" target="_blank" rel="nooponer" class="flex justify-center items-center"><Badge>Open to work</Badge></a>
-		</h1>
-		<h2 class="text-2xl opacity-80 text-wrap">
-			<span class="">Estudiando una Tecnicatura en Desarrollo de Software.</span>
-			<span class="opacity-85"> Desarrollador Web y Backend.</span> 
-			<span class="text-blue-400"> Especializado en APIs.</span>
-			<span class="opacity-85"> De Rosario, Argentina.</span>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill
+          href="https://www.linkedin.com/in/julian-decoppet-059858237/"
+        >
+          <Linkedin class="size-4 md:size-6" />
+           LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/JulianDeco/">
+          <Github class="size-4 md:size-6" />
+           Github
+        </SocialPill>
+        <SocialPill href="mailto:juliandecoppet@gmail.com">
+          <Gmail class="size-4 md:size-6" />
+           juliandecoppet@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80">
+        <Brifcase class="size-7" />
+         Experiencia laboral
+      </h2>
+      <Timeline />
+    </SectionContainer>
+	<SectionContainer id="proyectos">
+		<h2
+		  class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80"
+		>
+		  <Code class="size-7" />
+		   Proyectos
 		</h2>
-
-		<nav class="flex gap-x-4 mt-9">
-			<SocialPill href="https://www.linkedin.com/in/julian-decoppet-059858237/">
-				<Linkedin class="size-6" />
-    			LinkedIn
-			</SocialPill>
-			<SocialPill href="https://github.com/JulianDeco/">
-				<Github class="size-6" />
-    			Github
-			</SocialPill>
-			<SocialPill href="mailto:juliandecoppet@gmail.com">
-				<Gmail class="size-6" />
-    			juliandecoppet@gmail.com
-			</SocialPill>
-		</nav>
-		</section>
-		<section class="flex justify-center w-full lg:w-[740px] mx-auto py-44">
-			<Timeline />
-		</section>
-	</main>
+		<Projects />
+	  </SectionContainer>
+  </main>
 </Layout>
